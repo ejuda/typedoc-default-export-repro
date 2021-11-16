@@ -20,13 +20,35 @@ the other way around.
 TypeDoc will produce different documentation pages based on whether the default
 export is placed before or after the named export.
 
-If the default export is placed first, TypeDoc outputs:
-* a class named `default`,
-* a reference renaming and re-exporting the `default` class.
+For the following code:
 
-If the default export is placed last, TypeDoc outputs:
-* a class,
-* a reference named `default`, renaming and re-exporting said class.
+```ts
+import { SomeClass } from "./someClass";
+
+export default SomeClass;
+
+export { SomeClass };
+```
+
+TypeDoc outputs:
+
+![image](https://user-images.githubusercontent.com/26031740/141985674-27ce9679-0b23-40fc-b772-aa5ef1bc30b6.png)
+
+
+while for this one:
+
+```ts
+import { SomeClass } from "./someClass";
+
+export { SomeClass };
+
+export default SomeClass;
+```
+
+it shows:
+
+![image](https://user-images.githubusercontent.com/26031740/141985737-d7fa2072-01b8-4a3b-a8b8-179eb564d3a1.png)
+
 
 ## Steps to reproduce the bug
 
