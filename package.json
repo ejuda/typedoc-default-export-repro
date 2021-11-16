@@ -1,0 +1,18 @@
+{
+  "name": "typedoc-default-export-repro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs-default-first": "typedoc defaultFirst.ts --out docs-default-first --name \"Default export first\"",
+    "docs-default-last": "typedoc defaultLast.ts --out docs-default-last --name \"Default export last\"",
+    "docs": "npm run docs-default-first && npm run docs-default-last",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typedoc": "^0.22.8",
+    "typescript": "^4.4.4"
+  }
+}
